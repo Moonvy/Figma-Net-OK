@@ -1,11 +1,11 @@
 {
-  "name": "figmanetok",
+  "name": "figma-net-ok",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin":"index.js",
   "scripts": {
-    "build": "cosynode . ../dist"
+    "build": "cosynode . ../dist --name FigmaNetOK"
   },
   "author": "",
   "license": "ISC",
