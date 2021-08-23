@@ -36,18 +36,45 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
  前往系统偏好设置 > 安全性与隐私 > 允许访问，如果仍然提示无法打开可再次打开允许访问授权
 
 ### 测速
+- **使用步骤：**
+1. 解压并运行文件「**FigmaNetOK**」
+2. 运行过程中等一会
+3. 复制运行结果，添加到 Hosts 中
+<p align="center">
+  <img  height="480" src="https://user-images.githubusercontent.com/82380792/130447987-405788fb-ad48-45fd-97e4-9772f9190852.png">
+</p>
 
 
-### 修改 Host
-- [使用 SwitchHosts 修改](https://swh.app/zh) `https://swh.app/zh`
-  推荐使用该工具，修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
-- [手动修改](https://www.jianshu.com/p/752211238c1b)
 
+
+## 修改 Host
+- **推荐工具**  
+1. 推荐使用「SwitchHosts」 [`https://swh.app/zh`](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
+2. 手动修改 [`https://www.jianshu.com/p/752211238c1b`](https://www.jianshu.com/p/752211238c1b)
+
+### 以 SwitchHosts 为例，修改 Host
+1. 启动程序「SwitchHosts」
+2. 程序左上角「 添加 」
+<p align="center">
+  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130449806-97975483-d1fd-4788-a9ff-91808a0e0d11.png">
+</p>
+
+3. 自定义添加个名称，选择「本地」
+<p align="center">
+  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130449990-ca810997-3b15-4a32-81d4-4289a242b715.png">
+</p>
+
+4.把测速的结果复制到「SwitchHosts」，点击「启用」
+<p align="center">
+<img  height="380" src="https://user-images.githubusercontent.com/82380792/130450257-84bdd60b-bb3f-438b-862b-fe984145378f.png">
+</p>
+
+5.刷新或者重启 Figma 客户端，就完成了
 
 ## 常见问题
 
 
-### 如果确定 Host 是否生效
+### 如何确定 Host 是否生效
 - **浏览器检查**
 1. 浏览器窗口右上角「更多」 > 更多工具 > 开发者工具
 2. 刷新网页
