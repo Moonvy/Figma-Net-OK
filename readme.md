@@ -69,7 +69,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 <img  width="500" src="https://user-images.githubusercontent.com/82380792/130450257-84bdd60b-bb3f-438b-862b-fe984145378f.png">
 </p>
 
-5.刷新或者重启 Figma 客户端，就完成了
+5.重启 Figma 客户端或浏览器，就完成了
 
 ## 常见问题
 
