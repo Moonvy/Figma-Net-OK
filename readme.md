@@ -24,11 +24,17 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 
 ## 使用
 
-## 下载
+### 下载
 
-## 测速
+- [发布页](https://github.com/Moonvy/Figma-Net-OK/releases)
+- [Windows](https://moonvy.lanzoui.com/i3xOwt288tg)
+- [MacOS](https://moonvy.lanzoui.com/i0IGRt289cf)
 
-## 修改 Host
+### MacOS 下无法启动的问题
+
+### 测速
+
+### 修改 Host
 
 
 ## 常见问题
