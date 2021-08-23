@@ -1,0 +1,19 @@
+{
+  "name": "figmanetok",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin":"index.js",
+  "scripts": {
+    "build": "cosynode . ../dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dns-lookup": "^0.1.0",
+    "nslookup": "^1.1.1",
+    "ora": "^5.4.1",
+    "ping": "^0.4.1"
+  }
+}
