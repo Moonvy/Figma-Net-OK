@@ -6,10 +6,12 @@ const { resolve } = require("path")
 const { rejects } = require("assert")
 const testUrl = require("./testUrl.js")
 const ora = require("ora")
+const chalk = require("chalk")
 
-console.log("\n---------------------------")
-console.log("   🐌 Figma 最佳线路测试 🐙    ")
-console.log("---------------------------\n")
+console.log("\n--------------------------------------")
+console.log(chalk.green("       🐌 Figma 最佳线路测试 🐙    "))
+console.log(chalk.gray(" https://github.com/Moonvy/Figma-Net-OK   "))
+console.log("-------------------------------------\n")
 console.log("Host 编辑工具：https://swh.app/zh/\n")
 const spinner = ora("🐌").start()
 
@@ -29,7 +31,7 @@ async function main() {
     let static_ips = await dnsList("static.figma.com", "https://static.figma.com/app/icon/1/icon-192.png")
     https: spinner.succeed()
 
-    console.log("在此时对于你最佳的 Host 配置是：\n\n")
+    console.log(chalk.green("\n在此时对于你最佳的 Host 配置是：\n\n"))
     console.log(`${s3_ips[0].ip}     s3-alpha-sig.figma.com`)
     console.log(`${api_ips[0].ip}     www.figma.com`)
     console.log(`${static_ips[0].ip}     static.figma.com`)
@@ -74,7 +76,7 @@ async function dnsList(name, url) {
         try {
             let info = await ipInfo(addr)
             ob.info = info
-            spinner.text = `find ip info:${info}`
+            spinner.text = `find ip info:${ob.ip}:${info}\n`
             if (url) {
                 let time = await testUrl(url, ob.ip)
                 ob.time = time
@@ -87,6 +89,14 @@ async function dnsList(name, url) {
     }
 
     list = list.sort((a, b) => a.time - b.time)
+
+    console.log(
+        "\n",
+        list
+            .filter((x) => x != undefined && typeof x.info == "string")
+            .map((x) => chalk.gray(`  ${x.ip} - ${x.info} - ${x.time}`))
+            .join("\n")
+    )
     return list
 }
 
