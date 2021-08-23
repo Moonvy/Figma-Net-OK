@@ -8,7 +8,7 @@
 让 Figma 网络速度访问速度更快的方法（尤其是在 🇨🇳 中国）
 
 - 不使用翻墙
-- 更改本地 Host 配置
+- 更改本地 Hosts 配置
 
 Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma 的服务地址，有些时候因为运营商、Figma 服务状态、本地 DNS 设置等等原因，你自动选择的 Figma 服务地址可能不是最好的（有时候可能速度相差 10 倍），所以这个工具能帮你测试在你的环境下所有 Figma 服务地址的真实速度（不是 ping 而是真实连接速度），这样你就可以通过修改 Host 的办法指定一个最快的  Figma 服务地址
 
@@ -30,7 +30,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 - [Windows](https://moonvy.lanzoui.com/i3xOwt288tg)
 - [MacOS](https://moonvy.lanzoui.com/i0IGRt289cf)
 
-### MacOS 下无法启动的问题
+#### MacOS 下无法启动的问题
 
 - **授权设置**  
  前往系统偏好设置 > 安全性与隐私 > 允许访问，如果仍然提示无法打开可再次打开允许访问授权
@@ -49,24 +49,24 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 
 ## 修改 Host
 - **推荐工具**  
-1. 推荐使用「SwitchHosts」 [`https://swh.app/zh`](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
-2. 手动修改 [`https://www.jianshu.com/p/752211238c1b`](https://www.jianshu.com/p/752211238c1b)
+1. 推荐使用 [「SwitchHosts」](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
+2.  [手动修改](https://baike.baidu.com/item/hosts/10474546)
 
 ### 以 SwitchHosts 为例，修改 Host
 1. 启动程序「SwitchHosts」
 2. 程序左上角「 添加 」
 <p align="center">
-  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130449806-97975483-d1fd-4788-a9ff-91808a0e0d11.png">
+  <img  width="500" src="https://user-images.githubusercontent.com/82380792/130449806-97975483-d1fd-4788-a9ff-91808a0e0d11.png">
 </p>
 
 3. 自定义添加个名称，选择「本地」
 <p align="center">
-  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130449990-ca810997-3b15-4a32-81d4-4289a242b715.png">
+  <img  width="500" src="https://user-images.githubusercontent.com/82380792/130449990-ca810997-3b15-4a32-81d4-4289a242b715.png">
 </p>
 
 4.把测速的结果复制到「SwitchHosts」，点击「启用」
 <p align="center">
-<img  height="380" src="https://user-images.githubusercontent.com/82380792/130450257-84bdd60b-bb3f-438b-862b-fe984145378f.png">
+<img  width="500" src="https://user-images.githubusercontent.com/82380792/130450257-84bdd60b-bb3f-438b-862b-fe984145378f.png">
 </p>
 
 5.刷新或者重启 Figma 客户端，就完成了
@@ -80,7 +80,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 2. 刷新网页
 3. 找到参数：Network/state/Remote Addrese：X.X.X.X:XX 和你添加的 Hosts 对比，是相同的，代表已经使用成功
 <p align="center">
-  <img  height="480" src="https://user-images.githubusercontent.com/82380792/130445924-288acfa7-ce2b-4b77-9248-62755bc5040b.png">
+  <img  width="500" src="https://user-images.githubusercontent.com/82380792/130445924-288acfa7-ce2b-4b77-9248-62755bc5040b.png">
 </p>
 
 - **Figma客户端检查**
@@ -88,7 +88,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 2. 刷新页面（在标签上，右键 Reload Tab ）
 3. 找到参数：Network/state/Remote Addrese：X.X.X.X:XX 和你添加的 Hosts 对比，是相同的，代表已经使用成功
  <p align="center">
-  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130446934-7e6109cb-52b9-40d6-91f7-927be9f457f1.png">
+  <img  width="500" src="https://user-images.githubusercontent.com/82380792/130446934-7e6109cb-52b9-40d6-91f7-927be9f457f1.png">
 </p>
 
 ### 刷新浏览器的 DNS 缓存
@@ -102,5 +102,5 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
   菜单栏 “Safari 浏览器” –> “偏好设置…” –> “高级”，“在菜单栏中显示 “开发” 菜单。
   此时，点击菜单栏 ”开发“ –> ”清空缓存“ 即可。
 
-> 参考：https://sysin.org/blog/clear-browser-dns-cache/?__cf_chl_managed_tk__=pmd_qS0UzxTZ9PfLZXDgeWWyQolML5wgzVPc.nF.3ABD_qs-1629715174-0-gqNtZGzNAtCjcnBszQiR
+> [参考](https://sysin.org/blog/clear-browser-dns-cache/?__cf_chl_managed_tk__=pmd_qS0UzxTZ9PfLZXDgeWWyQolML5wgzVPc.nF.3ABD_qs-1629715174-0-gqNtZGzNAtCjcnBszQiR)
 
