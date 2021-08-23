@@ -39,16 +39,13 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 ### 刷新浏览器的 DNS 缓存
 有些情况下修改 Host 后，因为浏览器有缓存所以没有立即生效，这时候可以手动刷新浏览器缓存
 
-- Google Chrome
+- **Google Chrome**  
  在地址栏输入以下地址 `chrome://net-internals/#dns` 回车，点击 Clear host cache 即可
-
-- Google Chrome
- 在地址栏输入以下地址 `chrome://net-internals/#dns` 回车，点击 Clear host cache 即可
-
-
-
-
-
+- **Microsoft Edge**  
+ 在地址栏输入以下地址 `edge://net-internals/#dns` 回车，点击 Clear host cache 即可
+- **Safari**  
+  菜单栏 “Safari 浏览器” –> “偏好设置…” –> “高级”，“在菜单栏中显示 “开发” 菜单。
+  此时，点击菜单栏 ”开发“ –> ”清空缓存“ 即可。
 
 > 参考：https://sysin.org/blog/clear-browser-dns-cache/?__cf_chl_managed_tk__=pmd_qS0UzxTZ9PfLZXDgeWWyQolML5wgzVPc.nF.3ABD_qs-1629715174-0-gqNtZGzNAtCjcnBszQiR
 
