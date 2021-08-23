@@ -8,17 +8,16 @@ const testUrl = require("./testUrl.js")
 const ora = require("ora")
 const chalk = require("chalk")
 
-console.log("\n--------------------------------------")
-console.log(chalk.green("       🐌 Figma 最佳线路测试 🐙    "))
+console.clear()
+console.log("\n----------------------------------------------")
+console.log(chalk.green("       🐌 Figma 最佳线路测试 v1.0 🐙    "))
 console.log(chalk.gray(" https://github.com/Moonvy/Figma-Net-OK   "))
-console.log("-------------------------------------\n")
+console.log("----------------------------------------------\n")
 console.log("Host 编辑工具：https://swh.app/zh/\n")
 const spinner = ora("🐌").start()
 
 async function main() {
-    // console.log("www.figma.com", await dnsList("www.figma.com"))
-    // console.log("static.figma.com", await dnsList("static.figma.com"))
-
+    
     // s3-alpha-sig.figma.com
     let s3_ips = await dnsList(
         "s3-alpha-sig.figma.com",
@@ -29,7 +28,7 @@ async function main() {
 
     // static.figma.com
     let static_ips = await dnsList("static.figma.com", "https://static.figma.com/app/icon/1/icon-192.png")
-    https: spinner.succeed()
+    spinner.succeed()
 
     console.log(chalk.green("\n在此时对于你最佳的 Host 配置是：\n\n"))
     console.log(`${s3_ips[0].ip}     s3-alpha-sig.figma.com`)
@@ -77,24 +76,32 @@ async function dnsList(name, url) {
             let info = await ipInfo(addr)
             ob.info = info
             spinner.text = `find ip info:${ob.ip}:${info}\n`
+        } catch (error) {
+            // console.error(error)
+        }
+
+        try {
             if (url) {
                 let time = await testUrl(url, ob.ip)
                 ob.time = time
                 spinner.text = `test url:${addr}:${time}ms`
             }
         } catch (error) {
-            console.error(error)
+            // console.error(error)
         }
         list.push(ob)
     }
 
-    list = list.sort((a, b) => a.time - b.time)
+    list = list.sort((a, b) => a.time - b.time).filter((x) => x != undefined && typeof x.ip != undefined)
 
     console.log(
         "\n",
         list
-            .filter((x) => x != undefined && typeof x.info == "string")
-            .map((x) => chalk.gray(`  ${x.ip} - ${x.info} - ${x.time}`))
+            .map((x, index) =>
+                index == 0
+                    ? chalk.green(`  ${x.ip} - ${x.info} - ${x.time}`)
+                    : chalk.gray(`  ${x.ip} - ${x.info} - ${x.time}`)
+            )
             .join("\n")
     )
     return list
