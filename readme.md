@@ -47,12 +47,12 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 
 
 
-## 修改 Host
+## 修改 Hosts
 - **推荐工具**  
 1. 推荐使用 [「SwitchHosts」](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
 2.  [手动修改](https://baike.baidu.com/item/hosts/10474546)
 
-### 以 SwitchHosts 为例，修改 Host
+### 以 SwitchHosts 为例，修改 Hosts
 1. 启动程序「SwitchHosts」
 2. 程序左上角「 添加 」
 <p align="center">
@@ -74,7 +74,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 ## 常见问题
 
 
-### 如何确定 Host 是否生效
+### 如何确定 Hosts 是否生效
 - **浏览器检查**
 1. 浏览器窗口右上角「更多」 > 更多工具 > 开发者工具
 2. 刷新网页
