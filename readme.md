@@ -39,7 +39,7 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 
 
 ### 修改 Host
-- [使用 SwitchHosts 修改](https://swh.app/zh)
+- [使用 SwitchHosts 修改](https://swh.app/zh) `https://swh.app/zh`
   推荐使用该工具，修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
 - [手动修改](https://www.jianshu.com/p/752211238c1b)
 
@@ -48,11 +48,21 @@ Figma 有不同的服务器，根据你 DNS 服务，你会自动选择 Figma �
 
 
 ### 如果确定 Host 是否生效
-- [浏览器检测]
+- **浏览器检查**
 1. 浏览器窗口右上角「更多」 > 更多工具 > 开发者工具
 2. 刷新网页
 3. 找到参数：Network/state/Remote Addrese：X.X.X.X:XX 和你添加的 Hosts 对比，是相同的，代表已经使用成功
-4. 
+<p align="center">
+  <img  height="480" src="https://user-images.githubusercontent.com/82380792/130445924-288acfa7-ce2b-4b77-9248-62755bc5040b.png">
+</p>
+
+- **Figma客户端检查**
+1. Figma 客户端：右键菜单 > Plugins（插件） > Development（开发） > Open console（控制台）
+2. 刷新页面（在标签上，右键 Reload Tab ）
+3. 找到参数：Network/state/Remote Addrese：X.X.X.X:XX 和你添加的 Hosts 对比，是相同的，代表已经使用成功
+ <p align="center">
+  <img  height="380" src="https://user-images.githubusercontent.com/82380792/130446934-7e6109cb-52b9-40d6-91f7-927be9f457f1.png">
+</p>
 
 ### 刷新浏览器的 DNS 缓存
 有些情况下修改 Host 后，因为浏览器有缓存所以没有立即生效，这时候可以手动刷新浏览器缓存
