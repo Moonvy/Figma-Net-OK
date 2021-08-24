@@ -38,7 +38,7 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 #### Windows 下无 Hosts 写入权限的问题
 
 - **解决办法**  
- 因为电脑管家进行了拦截，退出软件，右键用管理员运行
+ [使用手动修改 Hosts 的方式](https://baike.baidu.com/item/hosts/10474546)
  <p align="center">
   <img width="280" src="https://user-images.githubusercontent.com/82380792/130554385-975c4dc8-f191-470b-a361-419bbf3ba48d.png">
 </p>
