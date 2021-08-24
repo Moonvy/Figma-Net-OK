@@ -24,7 +24,7 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 ## 使用
 
-### 下载
+### 下载 (v1.2)
 
 - [发布页](https://github.com/Moonvy/Figma-Net-OK/releases)
 - [Windows](https://moonvy.lanzoui.com/i34w2t3anpa)
