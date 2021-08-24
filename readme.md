@@ -35,6 +35,16 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 - **授权设置**  
  前往系统偏好设置 > 安全性与隐私 > 允许访问，如果仍然提示无法打开可再次打开允许访问授权
 
+#### Windows 下无 Hosts 写入权限的问题
+
+- **解决办法**  
+ 因为电脑管家进行了拦截，退出软件，右键用管理员运行
+ <p align="center">
+  <img width="280" src="https://user-images.githubusercontent.com/82380792/130554385-975c4dc8-f191-470b-a361-419bbf3ba48d.png">
+</p>
+ 
+
+
 ### 测速
 - **使用步骤：**
 1. 解压并运行文件「**FigmaNetOK**」
@@ -50,6 +60,9 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 ## 修改 Hosts
 - **推荐工具**  
 1. 推荐使用 [「SwitchHosts」](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
+- [Windows](https://moonvy.lanzoui.com/ioB0lt3dtba)
+- [MacOS](https://moonvy.lanzoui.com/i7eQlt38l7i)
+
 2.  [手动修改](https://baike.baidu.com/item/hosts/10474546)
 
 ### 以 SwitchHosts 为例，修改 Hosts
