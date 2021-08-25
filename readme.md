@@ -15,7 +15,7 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 
 <p align="center">
-  <img  height="400" src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK-CLI%E6%BC%94%E7%A4%BA.gif">
+  <img  width="460"  src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK%E6%BC%94%E7%A4%BA2.gif">
 </p>
 
 
