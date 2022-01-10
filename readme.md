@@ -13,11 +13,7 @@
 Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务地址，有些时候因为运营商、Figma 服务状态、DNS 设置等等原因，自动选择的 Figma 服务地址可能不是最好的（有时候可能速度相差 10 倍），所以这个工具能帮你测试在你的环境下所有 Figma 服务地址的真实速度（不是 ping 而是真实连接速度），这样你就可以通过修改 Hosts 的办法指定一个最快的 Figma 服务地址
 
 <p align="center">
-<<<<<<< HEAD
   <img  height="400" src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK-CLI%E6%BC%94%E7%A4%BA2.gif">
-=======
-  <img  width="460"  src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK%E6%BC%94%E7%A4%BA2.gif">
->>>>>>> dc0acd3c90344f43b4bceec88a6cb1cb78eb0f46
 </p>
 
 ## 使用
