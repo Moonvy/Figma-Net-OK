@@ -2,6 +2,7 @@ const prompts = require("prompts")
 const getBestHosts = require("./lib/getBestHosts")
 const sudoCallSetHosts = require("./lib/sudoCallSetHosts")
 const chalk = require("chalk")
+const os = require("os")
 
 console.clear()
 console.log(chalk.gray("\n----------------------------------------------"))
@@ -52,6 +53,8 @@ prompts(qs).then(async function (re) {
     ]).then(async function (re) {
         if (re.selectMode === "set") {
             await sudoCallSetHosts(bestLest)
+            let isWindow = os.platform() === "win32"
+            if (isWindow) process.stdin.resume()
         } else {
             process.exit(0)
         }
