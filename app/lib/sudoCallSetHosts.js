@@ -18,7 +18,7 @@ function sudoCallSetHosts(hosts) {
 
     console.log(chalk.yellow("\n 请求管理员权限 \n "))
 
-    sudo.exec(`${nodePath} ${scriptPath} ${cmd}`, {}, function (error, stdout, stderr) {
+    sudo.exec(`${nodePath} ${scriptPath} ${cmd}`, {name:"FIgmaNetOK"}, function (error, stdout, stderr) {
         if (error) throw error
         console.log(stdout)
     })
