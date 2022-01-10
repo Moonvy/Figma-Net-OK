@@ -156,7 +156,7 @@ function dnsLookup(name, server = "8.8.8.8") {
 
 async function ipInfo(ip) {
     try {
-        let re = await axios.get(`http://ip-api.com/json/${ip}?lang=zh-CN`, { timeout: 3000 })
+        let re = await axios.get(`http://ip-api.com/json/${ip}?lang=zh-CN`, { timeout: 1000 })
         return `${re.data.countryCode},${re.data.country},${re.data.city}`
     } catch (e) {
         // console.log("ipInfo", e)
