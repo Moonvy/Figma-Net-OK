@@ -45,7 +45,8 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 3. 得到最佳线路的 Hosts 配置
     - 你可以授予管理员权限一键修改 Hosts
     - 也可以把复制运行结果，手动去修改 Hosts 文件  
-       <img  width="600" src="https://user-images.githubusercontent.com/82231420/148729551-f72813dc-577c-4cf6-844d-c8976b11aa4d.png">
+       <img  width="600" src="https://user-images.githubusercontent.com/82231420/148732714-9ed8a3f7-6998-4330-b392-515a08b769be.png">
+
 4. 重启 Figma 客户端或浏览器，就完成了
 
 
