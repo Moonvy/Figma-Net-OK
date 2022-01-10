@@ -13,7 +13,11 @@
 Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务地址，有些时候因为运营商、Figma 服务状态、DNS 设置等等原因，自动选择的 Figma 服务地址可能不是最好的（有时候可能速度相差 10 倍），所以这个工具能帮你测试在你的环境下所有 Figma 服务地址的真实速度（不是 ping 而是真实连接速度），这样你就可以通过修改 Hosts 的办法指定一个最快的 Figma 服务地址
 
 <p align="center">
+<<<<<<< HEAD
   <img  height="400" src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK-CLI%E6%BC%94%E7%A4%BA2.gif">
+=======
+  <img  width="460"  src="https://github.com/Moonvy/Figma-Net-OK/raw/master/FigmaNetOK%E6%BC%94%E7%A4%BA2.gif">
+>>>>>>> dc0acd3c90344f43b4bceec88a6cb1cb78eb0f46
 </p>
 
 ## 使用
@@ -28,6 +32,16 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 - **授权设置**  
   前往系统偏好设置 > 安全性与隐私 > 允许访问，如果仍然提示无法打开可再次打开允许访问授权
+
+#### Windows 下无 Hosts 写入权限的问题
+
+- **解决办法**  
+ [使用手动修改 Hosts 的方式](https://baike.baidu.com/item/hosts/10474546)
+ <p align="center">
+  <img width="280" src="https://user-images.githubusercontent.com/82380792/130554385-975c4dc8-f191-470b-a361-419bbf3ba48d.png">
+</p>
+ 
+
 
 ### 测速
 
@@ -47,7 +61,14 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 - **推荐工具**
 
 1. 推荐使用 [「SwitchHosts」](https://swh.app/zh)修改和管理 Hosts 很方便（Mac、Win、Linux 都支持）
+<<<<<<< HEAD
 2. [手动修改](https://baike.baidu.com/item/hosts/10474546)
+=======
+- [Windows](https://moonvy.lanzoui.com/ioB0lt3dtba)
+- [MacOS](https://moonvy.lanzoui.com/i7eQlt38l7i)
+
+2.  [手动修改](https://baike.baidu.com/item/hosts/10474546)
+>>>>>>> dc0acd3c90344f43b4bceec88a6cb1cb78eb0f46
 
 ### 以 SwitchHosts 为例，修改 Hosts
 
