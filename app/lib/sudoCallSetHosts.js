@@ -1,6 +1,7 @@
 var sudo = require("sudo-prompt")
 var fs = require("fs")
 const chalk = require("chalk")
+const { resolve } = require("path")
 
 function sudoCallSetHosts(hosts) {
     let nodePath
@@ -18,8 +19,17 @@ function sudoCallSetHosts(hosts) {
 
     console.log(chalk.yellow("\n 请求管理员权限 \n "))
 
-    sudo.exec(`${nodePath} ${scriptPath} ${cmd}`, {name:"FIgmaNetOK"}, function (error, stdout, stderr) {
-        if (error) throw error
+    nodePath = resolve(nodePath)
+    scriptPath = resolve(scriptPath)
+
+    sudo.exec(`"${nodePath}" "${scriptPath}" ${cmd}`, { name: "FigmaNetOK" }, function (error, stdout, stderr) {
+        if (error) {
+            if (error.message.indexOf("EPERM") > -1) {
+                console.error(chalk.red("\n 无法获取权限，请手动修改 Hosts 文件 \n "))
+            }
+
+            throw error
+        }
         console.log(stdout)
     })
 }
