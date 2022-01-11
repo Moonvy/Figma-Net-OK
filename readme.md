@@ -19,11 +19,11 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 ## 使用
 
-### 下载 (v2.1)
+### 下载 (v2.1.1)
 
 - [发布页](https://github.com/Moonvy/Figma-Net-OK/releases)
-- [Windows](https://moonvy.lanzouy.com/iXivYyluufa)
-- [MacOS](https://moonvy.lanzouy.com/ihbhfyluuej)
+- [Windows](https://moonvy.lanzouy.com/ipmBTymum8b)
+- [MacOS](https://moonvy.lanzouy.com/i1wI8ymum2f)
 
 #### MacOS 下无法启动的问题
 
