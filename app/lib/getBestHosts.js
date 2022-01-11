@@ -31,7 +31,6 @@ const Hostnames = [
 
 module.exports = async function getBestHosts(mode) {
     let dnsList = DNSServers.filter((x) => (mode === "fast" ? x.fast : true))
-
     global.spinner = ora("🐌").start()
 
     let bestHost = []

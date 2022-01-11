@@ -7,7 +7,8 @@ module.exports = async function reacIps(url, ips) {
     let i = 0
     for (const ip of ips) {
         i++
-        let time = await testUrl(url, ip, bestIp ? bestIp.time + 200 : 5500)
+        let timeout = Math.min(bestIp ? bestIp.time + 200 : 5500, 5500)
+        let time = await testUrl(url, ip, timeout)
         spinner.start(`🐌 [${i}/${ips.length}] ${ip}  \t ${time}ms`)
 
         if ((bestIp && time < bestIp.time) || !bestIp) {
