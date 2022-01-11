@@ -7,7 +7,7 @@ const os = require("os")
 console.clear()
 console.log(chalk.gray("\n----------------------------------------------"))
 console.log(chalk.green.bold("                  FigmaNetOK             \n"))
-console.log(chalk.green("       🐌 Figma 网络最佳线路测试 v2.1 🐙    "))
+console.log(chalk.green("       🐌 Figma 网络最佳线路测试 v2.1.1 🐙    "))
 console.log(chalk.whiteBright("                🌕 Moonvy.com      "))
 console.log("    https://github.com/Moonvy/Figma-Net-OK   ")
 console.log(chalk.gray("----------------------------------------------\n"))
@@ -37,7 +37,6 @@ let qs = [
 
 prompts(qs).then(async function (re) {
     let bestLest = await getBestHosts(re.selectMode)
-
     prompts([
         {
             type: "select",

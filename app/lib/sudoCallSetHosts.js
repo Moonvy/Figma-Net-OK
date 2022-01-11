@@ -25,14 +25,13 @@ function sudoCallSetHosts(hosts) {
 
     let sudoCmd = `"${nodePath}" "${scriptPath}" ${cmd}`
     sudo.exec(sudoCmd, { name: "FigmaNetOK" }, function (error, stdout, stderr) {
-
         if (error) {
             if (error.message.indexOf("EPERM") > -1) {
                 let isMac = os.platform() === "darwin"
                 if (isMac) {
                     console.error(
                         chalk.red(`\n 无法获取权限，可以尝试手动复制以下命令在「终端」粘贴后中执行：\n\n`),
-                        chalk.blue.bold(sudoCmd),
+                        chalk.blue.green("sudo " + sudoCmd),
                         "\n\n"
                     )
                 } else {
@@ -40,7 +39,9 @@ function sudoCallSetHosts(hosts) {
                 }
             }
 
-            throw error
+            console.error(error)
+            console.error(chalk.red("\n 无法获取权限，请手动修改 Hosts 文件 \n "), error.message)
+            // throw error
         }
         console.log(stdout)
     })

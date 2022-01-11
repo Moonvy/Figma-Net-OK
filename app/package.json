@@ -1,13 +1,13 @@
 {
     "name": "figma-net-ok",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "",
     "main": "index.js",
     "bin": "index.js",
     "scripts": {
         "build": "cosynode . ../dist --name FigmaNetOK -n 12",
         "run": "node ./index.js",
-        "zip": "cd .. && zip -q -r ./dist/[Windows]FigmaNetOK_v2.1.zip ./dist/windows/  && zip -q -r ./dist/[MacOS]FigmaNetOK_v2.1.zip ./dist/macos/"
+        "zip": "cd .. && zip -q -r ./dist/[Windows]FigmaNetOK_v2.1.1.zip ./dist/windows/  && zip -q -r ./dist/[MacOS]FigmaNetOK_v2.1.1.zip ./dist/macos/"
     },
     "author": "",
     "license": "ISC",
