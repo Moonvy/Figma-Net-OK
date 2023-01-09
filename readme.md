@@ -8,7 +8,7 @@
 
 - 不使用翻墙
 - 仅更改本地 Hosts 配置
-- **🔥 2.0 版可自动一键修改 Hosts 配置**
+- **🔥 2.0 以上版可自动一键修改 Hosts 配置**
 
 Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务地址，有些时候因为运营商、Figma 服务状态、DNS 设置等等原因，自动选择的 Figma 服务地址可能不是最好的（有时候可能速度相差 10 倍），所以这个工具能帮你测试在你的环境下所有 Figma 服务地址的真实速度（不是 ping 而是真实连接速度），这样你就可以通过修改 Hosts 的办法指定一个最快的 Figma 服务地址
 
@@ -19,11 +19,11 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 ## 使用
 
-### 下载 (v2.1.1)
+### 下载 (v2.3.0)
 
 - [发布页](https://github.com/Moonvy/Figma-Net-OK/releases)
-- [Windows](https://moonvy.lanzouy.com/i6ce2ymx9eh)
-- [MacOS](https://moonvy.lanzouy.com/iPMMYymx94h)
+- [Windows](https://moonvy.lanzouy.com/i26BY0kja7cj)
+- [MacOS](https://moonvy.lanzouy.com/iEqmT0kja5oj)
 
 #### MacOS 下无法启动的问题
 
