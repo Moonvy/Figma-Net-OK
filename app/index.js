@@ -71,7 +71,7 @@ if (isHelpMode) {
     console.clear()
 
     console.log(chalk.green.bold("                  FigmaNetOK             \n"))
-    console.log(chalk.green("       🐌 Figma 网络最佳线路测试 v2.3.0 🐙    "))
+    console.log(chalk.green("       🐌 Figma 网络最佳线路测试 v2.5.0 🐙    "))
     console.log(chalk.whiteBright("                🌕 Moonvy.com      "))
     console.log("    https://github.com/Moonvy/Figma-Net-OK   ")
     console.log(chalk.gray("----------------------------------------------\n"))
