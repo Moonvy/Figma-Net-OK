@@ -3,7 +3,8 @@ const chalk = require("chalk")
 const { promisify } = require("util")
 
 async function setHosts(hosts) {
-    console.log("Hosts 文件位置 :", chalk.greenBright(hostile.HOSTS))
+    console.log("\n")
+    console.log(chalk.blue("Hosts 文件位置:" + hostile.HOSTS))
 
     let setHost = await promisify(hostile.set)
     let removeHost = await promisify(hostile.remove)
@@ -11,14 +12,14 @@ async function setHosts(hosts) {
     try {
         for (const host of hosts) {
             if (host.remove) {
-                console.log("清除", chalk.greenBright(host.ip))
+                console.log(chalk.yellow("清除"), chalk.yellow(host.ip))
                 await removeHost(host.ip)
             } else {
-                console.log("设置", chalk.greenBright(host.ip), host.hostname)
+                console.log(chalk.blue("设置"), chalk.blue(host.ip), chalk.blue(host.hostname))
                 await setHost(host.ip, host.hostname)
             }
         }
-        console.log("设置完成")
+        console.log(chalk.green("设置完成"))
     } catch (e) {
         if (e.message.includes("EACCES")) {
             console.error(chalk.yellow("没有权限。修改 Hosts 需要管理员权限，请以管理员权限运行本程序"))
