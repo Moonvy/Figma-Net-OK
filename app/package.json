@@ -1,6 +1,6 @@
 {
     "name": "figma-net-ok",
-    "version": "2.3.0",
+    "version": "2.5.0",
     "description": "",
     "main": "index.js",
     "bin": "index.js",
