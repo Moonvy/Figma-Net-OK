@@ -6,8 +6,9 @@
     "bin": "index.js",
     "scripts": {
         "build": "bun run build.js && npx cosynode dist ../dist --name FigmaNetOK -n 12",
+        "build:bun": "bun run build-bun.js",
         "run": "node ./index.js",
-        "zip": "cd .. && zip -q -r ./dist/[Windows]FigmaNetOK_v2.3.0.zip ./dist/windows/  && zip -q -r ./dist/[MacOS]FigmaNetOK_v2.3.0.zip ./dist/macos/"
+        "zip": "cd .. && zip -q -r ./dist/[Windows]FigmaNetOK_v$npm_package_version.zip ./dist/windows/  && zip -q -r ./dist/[MacOS]FigmaNetOK_v$npm_package_version.zip ./dist/macos/"
     },
     "author": "",
     "license": "ISC",
