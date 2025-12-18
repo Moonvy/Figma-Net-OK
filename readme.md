@@ -49,6 +49,36 @@ Figma 有不同的服务器，通常你的系统会自动选择 Figma 的服务�
 
 4. 重启 Figma 客户端或浏览器，就完成了
 
+### 命令行参数
+
+支持通过命令行参数直接执行操作，无需进入交互模式：
+
+```bash
+FigmaNetOK [选项]
+```
+
+| 参数 | 简写 | 说明 |
+|------|------|------|
+| `--change` | `-C` | 运行快速测试，并自动设置 hosts |
+| `--change-all` | `-CA` | 运行全部测试，并自动设置 hosts |
+| `--reset` | `-R` | 重置 hosts（清除 Figma 相关配置） |
+| `--help` | `-h` | 显示帮助信息 |
+
+**示例：**
+
+```bash
+# 快速测试并设置 hosts
+./FigmaNetOK --change
+
+# 全面测试并设置 hosts
+./FigmaNetOK -CA
+
+# 重置 hosts 配置
+./FigmaNetOK -R
+```
+
+不带参数运行时会进入交互模式。
+
 
  
 

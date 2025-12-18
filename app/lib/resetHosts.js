@@ -7,7 +7,8 @@ const { promisify } = require("util")
  * @param {string[]} hosts
  */
 async function resetHosts(hosts) {
-    console.log("Hosts 文件位置 :", chalk.greenBright(hostile.HOSTS))
+    console.log("\n")
+    console.log(chalk.blue("Hosts 文件位置:" + hostile.HOSTS))
     let removeHost = await promisify(hostile.remove)
     let getHost = await promisify(hostile.get)
 
@@ -33,7 +34,6 @@ async function resetHosts(hosts) {
     }
 }
 
-
 let cmd = process.argv[2]
 
 try {
@@ -42,6 +42,5 @@ try {
 } catch (e) {
     console.error(chalk.yellow("调用 resetHosts 参数错误。"), process.argv, e)
 }
-
 
 module.exports = resetHosts
