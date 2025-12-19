@@ -1,5 +1,11 @@
-import { rmSync, mkdirSync } from "fs";
+import { rmSync, mkdirSync, readFileSync } from "fs";
 import { build } from "esbuild";
+
+// 读取 package.json 中的版本号
+const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
+const VERSION = pkg.version;
+
+console.log(`Building version: ${VERSION}`);
 
 // 清空 dist 目录
 const distDir = "./dist";
@@ -20,6 +26,9 @@ await build({
     format: "cjs",
     minify: true,
     inject: ["./shims/performance.js"],
+    define: {
+        __VERSION__: JSON.stringify(VERSION),
+    },
 });
 
 // 打包需要单独调用的脚本（用于 sudo 提权执行）

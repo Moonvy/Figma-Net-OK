@@ -1,5 +1,11 @@
-import { rmSync, mkdirSync } from "fs";
+import { rmSync, mkdirSync, readFileSync } from "fs";
 import { $ } from "bun";
+
+// 读取 package.json 中的版本号
+const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
+const VERSION = pkg.version;
+
+console.log(`Building version: ${VERSION}`);
 
 // 清空 dist 目录
 const distDir = "./dist";
@@ -24,7 +30,7 @@ for (const { name, target } of targets) {
     console.log(`\n📦 Building for ${name}...`);
     
     try {
-        await $`bun build ./index.js --compile --target=${target} --outfile=${outputPath} --minify`;
+        await $`bun build ./index.js --compile --target=${target} --outfile=${outputPath} --minify --bytecode --define:__VERSION__=${JSON.stringify(JSON.stringify(VERSION))}`;
         console.log(`✅ Built: ${outputPath}`);
         
         // 对 Windows 可执行文件使用 UPX 压缩

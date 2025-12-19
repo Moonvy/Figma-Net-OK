@@ -70,8 +70,10 @@ if (isHelpMode) {
     // 交互模式
     console.clear()
 
+    const VERSION = typeof __VERSION__ !== "undefined" ? __VERSION__ : "2.5.0"
+
     console.log(chalk.green.bold("                  FigmaNetOK             \n"))
-    console.log(chalk.green("       🐌 Figma 网络最佳线路测试 v2.5.0 🐙    "))
+    console.log(chalk.green(`       🐌 Figma 网络最佳线路测试 v${VERSION} 🐙    `))
     console.log(chalk.whiteBright("                🌕 Moonvy.com      "))
     console.log("    https://github.com/Moonvy/Figma-Net-OK   ")
     console.log(chalk.gray("----------------------------------------------\n"))
