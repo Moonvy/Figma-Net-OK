@@ -1,7 +1,7 @@
 # FigmaNetOK 2
 
 <p align="center">
-  <img  height="100" src="https://github.com/Moonvy/Figma-Net-OK/raw/master/logo.png">
+  <img  height="100" src="https://github.com/Moonvy/Figma-Net-OK/raw/master/logo2.png">
 </p>
 
 让 Figma 网络速度访问速度更快的方法（尤其是在 🇨🇳 中国）
