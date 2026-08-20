@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FigmaNetOK - Electron PoC</title>
+    <style>
+      body{font-family: Arial, Helvetica, sans-serif;background:#0f1720;color:#e6eef8;padding:20px}
+      .card{background:#0b1116;padding:16px;border-radius:8px;margin-bottom:12px}
+      button{background:#2563eb;color:white;padding:8px 12px;border-radius:6px;border:0}
+      pre{background:#071018;padding:12px;border-radius:6px;max-height:300px;overflow:auto}
+      .hosts{font-family:monospace}
+    </style>
+  </head>
+  <body>
+    <h2>FigmaNetOK - Electron PoC</h2>
+    <div class="card">
+      <div>
+        <label>模式: </label>
+        <select id="mode"><option value="fast">快速</option><option value="full">全面</option></select>
+        <button id="start">开始测试</button>
+        <button id="reset">重置 Hosts</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>测试结果</h3>
+      <div id="result"></div>
+    </div>
+
+    <div class="card">
+      <button id="apply" disabled>应用 Hosts（需要权限）</button>
+      <div id="applyStatus"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

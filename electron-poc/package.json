@@ -1,0 +1,17 @@
+{
+  "name": "figma-net-ok-electron-poc",
+  "version": "0.1.0",
+  "description": "PoC Electron app for Figma-Net-OK - test hosts and apply hosts (Windows)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "nslookup": "^1.0.2",
+    "ora": "^6.1.2",
+    "chalk": "^4.1.2",
+    "sudo-prompt": "^9.2.1",
+    "electron": "^26.0.0"
+  }
+}
