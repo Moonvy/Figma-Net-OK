@@ -1,17 +1,1 @@
-{
-  "name": "figma-net-ok-electron-poc",
-  "version": "0.1.0",
-  "description": "PoC Electron app for Figma-Net-OK - test hosts and apply hosts (Windows)",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "dependencies": {
-    "axios": "^1.4.0",
-    "nslookup": "^1.0.2",
-    "ora": "^6.1.2",
-    "chalk": "^4.1.2",
-    "sudo-prompt": "^9.2.1",
-    "electron": "^26.0.0"
-  }
-}
+{"name":"figma-net-ok-electron-poc","version":"0.1.0","description":"PoC Electron app for Figma-Net-OK - test hosts and apply hosts (Windows)","main":"main.js","scripts":{"start":"electron .","dist":"electron-builder --win nsis"},"dependencies":{"axios":"^1.4.0","nslookup":"^1.0.2","ora":"^6.1.2","chalk":"^4.1.2","sudo-prompt":"^9.2.1","electron":"^26.0.0"},"devDependencies":{"electron-builder":"^24.6.0"},"build":{"appId":"com.yourorg.figma-drip","productName":"FigmaDrip","files":["**/*","!node_modules/*/{README.md,README,readme.md}","!**/*.map"],"win":{"target":[{"target":"nsis","arch":["x64","ia32"]}],"publisherName":"Mr.xiaoan"},"nsis":{"oneClick":false,"perMachine":false,"allowElevation":true,"allowToChangeInstallationDirectory":true},"directories":{"buildResources":"build"}}

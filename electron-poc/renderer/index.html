@@ -2,34 +2,129 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>FigmaNetOK - Electron PoC</title>
+    <title>FigmaDrip - Electron PoC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      body{font-family: Arial, Helvetica, sans-serif;background:#0f1720;color:#e6eef8;padding:20px}
-      .card{background:#0b1116;padding:16px;border-radius:8px;margin-bottom:12px}
-      button{background:#2563eb;color:white;padding:8px 12px;border-radius:6px;border:0}
-      pre{background:#071018;padding:12px;border-radius:6px;max-height:300px;overflow:auto}
-      .hosts{font-family:monospace}
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+      :root{--bg:#071021;--card:#0b1116;--muted:#89a0b0;--accent:#2dd4bf;--accent-2:#60a5fa;--danger:#ef4444}
+      html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#061018 0%, #071021 100%);color:#e6eef8}
+      .container{max-width:1200px;margin:18px auto;padding:18px}
+      header{display:flex;align-items:center;justify-content:space-between}
+      .title{display:flex;align-items:center;gap:12px}
+      .logo{width:44px;height:44px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700}
+      h1{font-size:18px;margin:0}
+      .controls{display:flex;gap:8px;align-items:center}
+      .grid{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:18px}
+      .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+      .muted{color:var(--muted)}
+      .hosts-list{font-family:monospace;background:transparent;border-radius:6px;padding:8px}
+      .host-line{display:flex;justify-content:space-between;padding:8px;border-radius:6px}
+      .host-left{color:#74f1d6;font-weight:600}
+      .host-right{color:var(--muted)}
+      .mode-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:#dbeafe;cursor:pointer}
+      .mode-btn.active{background:linear-gradient(90deg,#092431,#0b2130);border-color:rgba(255,255,255,0.06)}
+      footer{margin-top:18px;color:var(--muted);font-size:13px}
+      .actions{display:flex;gap:10px}
+      button.primary{background:linear-gradient(90deg,var(--accent-2),#7c3aed);border:0;padding:10px 16px;border-radius:10px;color:#041226;cursor:pointer}
+      button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:#e6eef8}
+      .progress-bar{height:10px;background:#051018;border-radius:8px;overflow:hidden;margin-top:12px}
+      .progress-inner{height:100%;background:linear-gradient(90deg,#60a5fa,#2dd4bf);width:0%;transition:width 220ms linear}
+      .ip-rows{max-height:320px;overflow:auto;margin-top:8px}
+      .ip-row{display:flex;justify-content:space-between;padding:8px;border-radius:8px;border-bottom:1px dashed rgba(255,255,255,0.03)}
+      .ip-left{color:#9ae6b4}
+      .ip-middle{color:#c7d2fe}
+      .ip-time{color:#fbbf24;font-weight:600}
+      .small{font-size:13px;color:var(--muted)}
+      .warning{background:#0f2624;padding:12px;border-radius:10px;border-left:4px solid #f59e0b}
+      .right-panel .card{height:100%}
+      .log-pre{background:#071018;padding:12px;border-radius:8px;color:#9fb5c6;height:520px;overflow:auto}
+      .top-right-controls{display:flex;gap:8px}
+      .circle-btn{width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
     </style>
   </head>
   <body>
-    <h2>FigmaNetOK - Electron PoC</h2>
-    <div class="card">
-      <div>
-        <label>模式: </label>
-        <select id="mode"><option value="fast">快速</option><option value="full">全面</option></select>
-        <button id="start">开始测试</button>
-        <button id="reset">重置 Hosts</button>
+    <div class="container">
+      <header>
+        <div class="title">
+          <div class="logo">FD</div>
+          <div>
+            <h1>FigmaDrip <span class="muted">v0.1 PoC</span></h1>
+            <div class="small">Figma 网络最佳线路测速</div>
+          </div>
+        </div>
+        <div class="top-right-controls">
+          <div class="small muted">当前 Hosts: <span id="currentHostsCount">-</span></div>
+          <div class="circle-btn">⟳</div>
+          <div class="circle-btn">⚙</div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="small muted">当前 Hosts 配置</div>
+                <div id="currentHosts" class="hosts-list small">运行测试可检测当前 hosts</div>
+              </div>
+              <div>
+                <div class="small muted">选择测试模式</div>
+                <div style="display:flex;gap:8px;margin-top:6px">
+                  <button id="modeFast" class="mode-btn active">快速</button>
+                  <button id="modeFull" class="mode-btn">全面</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="small muted">最佳 Hosts 配置</div>
+                <div id="bestHosts" class="hosts-list"></div>
+              </div>
+              <div style="text-align:right">
+                <div class="small muted">总体状态</div>
+                <div id="statusText" class="small">空闲</div>
+              </div>
+            </div>
+            <div style="margin-top:10px">
+              <div class="progress-bar"><div id="progressInner" class="progress-inner"></div></div>
+              <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+                <div class="actions">
+                  <button id="btnTest" class="primary">开始测试</button>
+                  <button id="btnCancel" class="ghost" disabled>取消</button>
+                  <button id="btnApply" class="primary" disabled>应用 Hosts</button>
+                  <button id="btnReset" class="ghost">重置 Hosts</button>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <div class="small muted">逐条测速详情</div>
+              <div class="ip-rows" id="ipRows"></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <div class="warning">
+              <div class="small muted">说明</div>
+              <div class="small" style="margin-top:8px">点击“应用 Hosts”会修改系统 hosts 文件，程序会备份原始 hosts 并在无权限时弹出系统确认（UAC）。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="card">
+            <div class="small muted">历史与日志</div>
+            <pre id="logArea" class="log-pre"></pre>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <h3>测试结果</h3>
-      <div id="result"></div>
-    </div>
-
-    <div class="card">
-      <button id="apply" disabled>应用 Hosts（需要权限）</button>
-      <div id="applyStatus"></div>
+      <footer>
+        <div class="small muted">PoC - 下一步可制作安装器并代码签名（发布者：Mr.xiaoan）</div>
+      </footer>
     </div>
 
     <script src="renderer.js"></script>
